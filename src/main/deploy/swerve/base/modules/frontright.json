@@ -15,7 +15,7 @@
     "angle": false
   },
   "absoluteEncoder": {
-    "type": "cancoder_can",
+    "type": "cancoder",
     "id": 12,
     "channel": 0,
     "canbus": ""

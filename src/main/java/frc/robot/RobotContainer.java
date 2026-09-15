@@ -19,7 +19,7 @@ public class RobotContainer {
       swerve.getAngularVelocityStream(
           driverXbox::getLeftX, 
           driverXbox::getLeftY, 
-          () -> driverXbox.getRawAxis(2))
+          driverXbox::getRightX)
       .withAllianceRelativeControl();
 
   public RobotContainer() {
@@ -30,7 +30,7 @@ public class RobotContainer {
     swerve.setDefaultCommand(swerve.drive(driveAngularVelocity));
 
     // zeroing the gyro
-    driverXbox.start().and(driverXbox.back()).onTrue(swerve.zeroGyro());
+    driverXbox.leftBumper().and(driverXbox.rightBumper()).onTrue(swerve.zeroGyro());
   }
 
   public Command getAutonomousCommand() {

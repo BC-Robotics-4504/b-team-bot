@@ -25,7 +25,7 @@ public class SwerveDriveSubsystem extends SubsystemBase
     var cfg = new SwerveDriveConfig()
         .withStartingPose(new Pose2d(3, 3, Rotation2d.kZero))
         .withSubsystem(this)
-        .withTelemetry(TelemetryVerbosity.HIGH);
+        .withTelemetry("Swerve",TelemetryVerbosity.HIGH);
     try
     {
       drive = new SwerveParser(new File(Filesystem.getDeployDirectory(), "swerve/base"))
